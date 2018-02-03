@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title by Roksana</title>
+    <style>
+        div b {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="js-click-me" style="cursor: pointer"><b>First site</b></div>
+    <div id="js-click-result"></div>
+    <script>
+        (function() {
+            var count = 0;
+            var element = null;
+
+            function getResultElement() {
+                if (element === null) {
+                    element = document.getElementById('js-click-result')
+                }
+
+                return element;
+            }
+
+            document.getElementById('js-click-me').addEventListener('click', function () {
+                count = count + 1;
+                getResultElement().innerHTML = count;
+            });
+        })();
+    </script>
+</body>
+</html>
